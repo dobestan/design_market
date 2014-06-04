@@ -1,4 +1,53 @@
 <h1>Profile Page</h1>
 
-<%= @user.email  %>
-<%= @user.password_digest %>
+<% if @user.active %>
+<% else %>
+  <div class="alert alert-danger">
+    <p>정상적인 서비스 이용을 위하여 이메일 인증이 필요합니다. 이메일을 확인해주세요.</p>
+  </div>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>ID</td>
+      <td><%= @user.id  %></td>
+    </tr>
+    <tr>
+      <td>Email </td>
+      <td><%= @user.email  %>
+        <% if @user.active %>
+          <span class="label label-primary">activated</span>
+        <% else %>
+          <span class="label label-danger">inactivated</span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Activation Token</td>
+      <td><%= @user.activation_token  %></td>
+    </tr>
+    <tr>
+      <td>Password Digest</td>
+      <td><%= @user.password_digest  %></td>
+    </tr>
+    <tr>
+      <td>Created At</td>
+      <td><%= @user.created_at  %></td>
+    </tr>
+    <tr>
+      <td>Updated At</td>
+      <td><%= @user.updated_at  %></td>
+    </tr>
+    <tr>
+      <td>Activate Email <span class="label label-danger">development</span> </td>
+      <td><%= link_to "#{root_path}activate/#{@user.activation_token}", activate_path(activation_token: @user.activation_token) %></td>
+    </tr>
+  <tbody>
+  </tbody>
+</table>

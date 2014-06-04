@@ -68,4 +68,13 @@ describe User do
       it { should_not be_valid }
     end
   end
+
+  describe "when Active" do
+    before do
+      @user.save
+    end
+
+    its(:active) { should be false }
+    its(:activation_token) { should_not be_empty }
+  end
 end

@@ -18,7 +18,14 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id  %></td>
-        <td><%= user.email  %></td>
+        <td>
+          <%= link_to "#{user.email}", user_path(id:user.id) %>
+          <% if user.active %>
+            <span class="label label-primary pull-right">activated</span>
+          <% else %>
+            <span class="label label-danger pull-right">inactivated</span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
