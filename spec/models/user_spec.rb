@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = User.new( email: "example_user@example_email.com",
+    @user = User.new( email: "example_user@exampleemail.com",
                        password: "foobar",
                        password_digest: "foobar" )
   end
@@ -58,6 +58,14 @@ describe User do
     end
   end
 
-  describe "Password" do
+  describe "when Password" do
+    describe "length is shorten than 6" do
+      before do
+        @user.password = "a" * 5
+        @user.password_confirmation = "a" * 5
+      end
+
+      it { should_not be_valid }
+    end
   end
 end
