@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>All Users</h1>
+</div>
+
+<div class="alert alert-info">
+  <전체 유저 관리> 기능은 관리자 모드에서만 확인하실 수 있습니다.
+  우측 상단 메뉴에서도 당연히 빠질 예정이며, URL로도 접속할 수 없습니다.
+</div>
+
+<table class="table"> 
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id  %></td>
+        <td><%= user.email  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
