@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Login</h1>
+</div>
+
+<%= form_for :session do |f| %>
+  <div>
+    <%= f.label :email %><br />
+    <%= f.email_field :email  %>
+  </div>
+
+  <div>
+    <%= f.label :password %><br />
+    <%= f.password_field :password  %>
+  </div>
+
+  <div>
+    <%= f.submit 'login'  %>
+  </div>
+<% end %>

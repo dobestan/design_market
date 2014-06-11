@@ -16,8 +16,12 @@ ActiveRecord::Schema.define(version: 20140604134214) do
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
+    t.string   "remember_token"
     t.boolean  "active",           default: false
     t.string   "activation_token"
+    t.boolean  "admin",            default: false
+    t.boolean  "designer",         default: false
+    t.boolean  "client",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
