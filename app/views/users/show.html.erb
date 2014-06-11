@@ -26,6 +26,10 @@
         <% else %>
           <span class="label label-danger">inactivated</span>
         <% end %>
+
+        <% if @user.admin %>
+          <span class="label label-primary">admin</span>
+        <% end %>
       </td>
     </tr>
     <tr>
@@ -51,3 +55,27 @@
   <tbody>
   </tbody>
 </table>
+
+<% if @user.designer %>
+<% else %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">디자이너</h3>
+    </div>
+    <div class="panel-body">
+      <p>디자이너가 아닙니다 <span class="label label-primary">기획</span></p>
+    </div>
+  </div>
+<% end %>
+
+<% if @user.client %>
+<% else %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">클라이언트</h3>
+    </div>
+    <div class="panel-body">
+      <p>클라이언트가 아닙니다 <span class="label label-primary">기획</span></p>
+    </div>
+  </div>
+<% end %>

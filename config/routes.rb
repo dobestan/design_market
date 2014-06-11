@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :users
+
+  match '/signup', to: 'users#new', via: :get, as: 'signup'
+  match '/login', to: 'sessions#new', via: :get, as: 'login'
+  match '/login', to: 'sessions#create', via: :post
+  match '/logout', to: 'sessions#destroy', via: :delete, as: 'logout'
+  match '/profile', to: 'users#profile', via: :get, as: 'profile'
+
+  resources :users, only: [:index, :create, :show]
 
   match '/activate/:activation_token', to: 'users#activate', via: :get, as: "activate"
 
