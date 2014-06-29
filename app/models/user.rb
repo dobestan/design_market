@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_activation_token
 
+  has_many :requests
+  has_many :designs
+
   has_secure_password
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

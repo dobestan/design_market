@@ -11,3 +11,11 @@ admin = User.create(email: 'admin@artinkle.com',
                     password_confirmation: 'foobar',
                     admin: true,
                     active: true)
+
+Type.create(name: "로고")
+Type.create(name: "포스터")
+Type.create(name: "앨범커버")
+Type.create(name: "간판")
+Type.create(name: "패키지")
+Type.create(name: "명함")
+Type.create(name: "표지")
