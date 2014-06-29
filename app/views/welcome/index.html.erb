@@ -2,37 +2,15 @@
   <h1>ArTinkle</h1>
 </div>
 
-<div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title">5주차 개발완료</h3>
-  </div>
-  <div class="panel-body">
-    <ul>
-      <li>Basic Session Management</li>
-      <li>Basic Admin Permission</li>
-      <li>Add Remember Token to User Model</li>
-      <li>Add Designer / Client to User Model</li>
-      <li>Basic Routing : /login, /logout, /profile</li><br />
-
-      <li>Admin User : "admin@artinkle.com" / "foobar"</li>
-    </ul>
-  </div>
-</div>
-
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">6주차 개발예정</h3>
+    <h3 class="panel-title">의뢰중인 작업들</h3>
   </div>
   <div class="panel-body">
     <ul>
-      <li>Session Management : update</li>
-      <li>Admin Permission : update</li><br />
-
-      <li>Designer / Client Permission</li><br />
-
-      <li>Sign up as Designer <span class="label label-primary">기획</span></li>
-      <li>Sign up as Client <span class="label label-primary">기획</span></li>
-
+      <% @requests.each do |request| %>
+        <li><%= link_to generate_request_title(request.id), show_request_url(token: request.token) %></li>
+      <% end %>
     </ul>
   </div>
 </div>

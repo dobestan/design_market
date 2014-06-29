@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   match '/logout', to: 'sessions#destroy', via: :delete, as: 'logout'
   match '/profile', to: 'users#profile', via: :get, as: 'profile'
 
+  match '/request/new', to: 'requests#new', via: :get
+  match '/request/new', to: 'requests#create', via: :post
+  match '/request/:token', to: 'requests#show', via: :get, as: 'show_request'
+
   resources :users, only: [:index, :create, :show]
 
   match '/activate/:activation_token', to: 'users#activate', via: :get, as: "activate"

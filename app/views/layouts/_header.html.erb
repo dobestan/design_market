@@ -15,11 +15,12 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if signed_in? %>
-          <li><%= link_to "Logout", logout_path, method: :delete  %></li>
-          <li><%= link_to "Profile", profile_path, method: :get  %></li>
+          <li><%= link_to "로그아웃", logout_path, method: :delete  %></li>
+          <li><%= link_to "프로필", profile_path, method: :get  %></li>
+          <li><%= link_to "의뢰하기", request_new_path, method: :get  %></li>
         <% else %>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "로그인", login_path %></li>
+          <li><%= link_to "회원가입", signup_path %></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->

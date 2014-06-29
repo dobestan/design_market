@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>의뢰 상세보기 페이지</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>ID</td>
+      <td><%= @request.id  %></td>
+    </tr>
+    <tr>
+      <td>USER ID</td>
+      <td><%= @request.user_id  %></td>
+    </tr>
+    <tr>
+      <td>Usage </td>
+      <td><%= @request.usage  %></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td><%= @request.design_type %>(<%= get_request_type_name(@request.design_type) %>)</td>
+    </tr>
+    <tr>
+      <td>Token</td>
+      <td><%= @request.token  %></td>
+    </tr>
+    <tr>
+      <td>Created At</td>
+      <td><%= @request.created_at  %></td>
+    </tr>
+    <tr>
+      <td>Updated At</td>
+      <td><%= @request.updated_at  %></td>
+    </tr>
+  <tbody>
+  </tbody>
+</table>
